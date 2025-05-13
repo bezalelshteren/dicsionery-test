@@ -8,9 +8,9 @@ namespace numOperasionProjekt
 {
     internal class Program
     {
-        /*
+        
     
-        static string getThenumber(string args)
+        static string[] getThenumber(string[] args)
         {
             string liyt = " ";
             if (args.Length == 0)
@@ -61,7 +61,7 @@ namespace numOperasionProjekt
             return numbersList;
         }
 
-        */
+        
         //b
 
         static void printOrder(List<int> number)
@@ -89,20 +89,26 @@ namespace numOperasionProjekt
 
 
 
-        
-        //d 
 
+        //d 
+        
         static void printSorted(List<int> number)
         {
+            int y = 0;
             List<int> sorted = new List<int>();
             List<int> numberTosorted = number;
-            for (int i = 0; i < numberTosorted.Count; i++)
+            //Console.WriteLine(numberTosorted);
+        
+            
+            for (int i = 0; i < numberTosorted.Count-1; i++)
             {
-                for (int j = 0; j < numberTosorted.Count; j++)
+                for (int j = 0; j < numberTosorted.Count-1; j++)
                 {
-                    if (numberTosorted[i] < numberTosorted[j])
+                    if (numberTosorted[i] > numberTosorted[j])
                     {
-                        sorted.Add(numberTosorted[j]);
+                        y = numberTosorted[i];
+                        numberTosorted.RemoveAt(i);
+                        sorted.Add(numberTosorted[i]);
                     }
                 }
             }
@@ -183,7 +189,7 @@ namespace numOperasionProjekt
             }
             
 
-        /*
+        
 
 
             static int deccide()
@@ -200,10 +206,10 @@ namespace numOperasionProjekt
 
 
 
-        static void maneger()
+        static void maneger(string[]args)
         {
-
-            List<int> number6 = chaingToNumList();
+            string[] args1 = args;
+            List<int> number6 = chaingToNumList(a);
 
             int deccided = deccide();
             do
@@ -216,18 +222,18 @@ namespace numOperasionProjekt
                     case 2:
                         printRevers(number6);
                         break;
-                    case 3:
-                        printSorted(number6);
-                        break;
+                    //case 3:
+                      //  printSorted(number6);
+                       // break;
                     case 4:
                         printMax(number6);
                         break;
                     case 5:
                         printMin(number6);
                         break;
-                    case 6:
-                        printAverage(number6, printSum());
-                        break;
+                    //case 6:
+                      //  printAverage(number6, printSum());
+                        //break;
                     case 7:
                         printLen(number6);
                         break;
@@ -249,12 +255,13 @@ namespace numOperasionProjekt
 
 
 
-        */
+        
         //static List<int> lisr = new List<int> { 12, 23, 56, 99, 78 };
 
 
         static void Main(string[] args)
         {
+            string[] args1 = args;
             List<int> lisr = new List<int> {56,95, 12, 23, 56, 99, 78 };
             /*
             printMin( lisr);
@@ -265,8 +272,8 @@ namespace numOperasionProjekt
             printSum(lisr);
             printRevers(lisr);
             */
-            printSorted(lisr);
-            //maneger();
+            //printSorted(lisr);
+            maneger(args1);
         }
     }
 }
