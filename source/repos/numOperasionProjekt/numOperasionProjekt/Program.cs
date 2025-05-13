@@ -10,17 +10,18 @@ namespace numOperasionProjekt
     {
         
     
-        static string[] getThenumber(string[] args)
+        static string getThenumber( string[] args)
         {
+            int theArgList = 0 ;
             string liyt = " ";
             if (args.Length == 0)
             {
                 liyt =  getNumberBycw();
                 return liyt;
             }
-            
             else
             {
+                theArgList = args();
                 return args;
             }
         }
